@@ -17,9 +17,7 @@ def get_mashable_stories
 	mashable_array = []
 	mashable['new'].each do |story|
 		title = story['title']
-		# /\/(\w+$)/ =~ story['id']
-		# category = $~
-		category = story['id']
+		category = story['channel']
 		upvotes = calculate_upvotes(title, category)
 		mashable_hash = {title: title, category: category, upvotes: upvotes}
 		mashable_array << mashable_hash
