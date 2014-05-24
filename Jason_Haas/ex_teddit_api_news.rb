@@ -57,16 +57,10 @@ end
 
 def calculate_upvotes(title, category)
 	upvotes = 1
-	if title.downcase.include? 'cat'
-		upvotes *= 5
-	elsif title.downcase.include? 'bacon'
-		upvotes *= 8
-	elsif title.downcase.include? 'food'
-		upvotes *= 3
-	elsif title.downcase.include? 'lions'
-		upvotes *= 7
-	else
-		# nothing
+	if title.downcase.include? 'cat' then upvotes *= 5
+	elsif title.downcase.include? 'bacon' then upvotes *= 8
+	elsif title.downcase.include? 'food' then upvotes *= 3
+	elsif title.downcase.include? 'lions' then upvotes *= 7
 	end
 	upvotes
 end
