@@ -15,20 +15,20 @@ end
 
 def calculate_upvotes stories_hash
 
-    stories_hash[:upvotes] = 1
+  stories_hash[:upvotes] = 1
 
-    stories_hash[:upvotes] *= 5 if stories_hash[:title].downcase.include? "cat"
-    stories_hash[:upvotes] *= 8 if stories_hash[:title].downcase.include? "bacon"
-    stories_hash[:upvotes] *= 3 if stories_hash[:category].downcase.include? "food"
+  stories_hash[:upvotes] *= 5 if stories_hash[:title].downcase.include? "cat"
+  stories_hash[:upvotes] *= 8 if stories_hash[:title].downcase.include? "bacon"
+  stories_hash[:upvotes] *= 3 if stories_hash[:category].downcase.include? "food"
       
 end
 
 def show_stories stories
   1.upto(5) do |s|
     #stories.each do |exit_stories|
-      puts "Story: #{stories[s][:title]}" 
-      puts "Category: (#{stories[s][:category]})" 
-      puts "Current Upvotes: #{stories[s][:upvotes]}" 
+      puts "Story: #{stories[-s][:title]}" 
+      puts "Category: (#{stories[-s][:category]})" 
+      puts "Current Upvotes: #{stories[-s][:upvotes]}" 
       puts
     #end
   end
@@ -76,10 +76,10 @@ opening_message "Welcome to Teddit! a text based news aggregator. Get today's ne
 # get_mashable_stories
 # get_reddit_stories
 puts "=== Digg stories ======"
-show_stories(get_digg_stories)
+show_stories get_digg_stories
 puts
 puts "=== Mashable stories ======"
-show_stories(get_mashable_stories)
+show_stories get_mashable_stories
 puts
 puts "=== Reddit Stories ======"
-show_stories(get_reddit_stories)
+show_stories get_reddit_stories
