@@ -82,11 +82,11 @@ apt_count = gets.to_i
   end
 end
 
-# puts "What would you like to do next, (v)iew all apartments? (q)uit?"
-# response = gets.strip
+puts "What would you like to do next, (v)iew all apartments? (q)uit?"
+response = gets.strip
 
-# if response == 'v'
-#   building.view_apartments
-# else
-#   puts "Thanks for using Ruby Building Manager"
-# end
+if response == 'v'
+  building.view_apartments
+else
+  puts "Thanks for using Ruby Building Manager"
+end
