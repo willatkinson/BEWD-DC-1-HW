@@ -1,0 +1,3 @@
+[submodule "sinatra-secret-number"]
+	path = sinatra-secret-number
+	url = git@github.com:kencrocken/sinatra-secret-number.git
