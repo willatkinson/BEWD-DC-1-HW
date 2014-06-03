@@ -16,12 +16,12 @@ class Game
     @guesses =  3
     @guess = guess
     @player = Person.new(name)
-    # @messages = {
-    #   win:    "Winner! Winner! The Secret Number was #{@secret.number}. Well done!",
-    #   higher: "Nope, that's not the Secret Number.  Guess higher!",
-    #   lower:  "Sorry, you guessed wrong.  Guess lower!",
-    #   lose:   "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}."
-    # }
+    @messages = {
+      win:    "Winner! Winner! The Secret Number was #{@secret.number}. Well done!",
+      higher: "Nope, that's not the Secret Number.  Guess higher!",
+      lower:  "Sorry, you guessed wrong.  Guess lower!",
+      lose:   "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}."
+    }
     @wins = 0
     @losses = 0
 
@@ -62,19 +62,19 @@ class Game
   def check_number(guess)
 
     if guess == secret.number  
-        #puts "#{@messages[:win]} \n \n"  
-        puts "Winner! Winner! The Secret Number was #{@secret.number}. Well done!\n\n"
+        puts @messages[:win] 
+        # puts "Winner! Winner! The Secret Number was #{@secret.number}. Well done!\n\n"
         @wins += 1
         play_again
     elsif guess < secret.number && @guesses > 0
-        # puts "#{@messages[:higher]} \n \n" 
-        puts "Nope, that's not the Secret Number.  Guess higher!\n\n"
+        puts "#{@messages[:higher]}"
+        # puts "Nope, that's not the Secret Number.  Guess higher!\n\n"
     elsif guess > secret.number && @guesses > 0
-        # puts "#{@messages[:lower]} \n \n" 
-        puts "Sorry, you guessed wrong.  Guess lower!\n\n"
+        puts @messages[:lower]
+        # puts "Sorry, you guessed wrong.  Guess lower!\n\n"
     else
-        # puts @messages[:lose] 
-        puts "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}.\n\n"
+        puts @messages[:lose] 
+        # puts "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}.\n\n"
         @losses += 1
         play_again
     end
