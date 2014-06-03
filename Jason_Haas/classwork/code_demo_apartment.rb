@@ -15,8 +15,6 @@ class Apartment
 	def self.to_s
 		"#{@name} is #{@sqft} square feet and is currently occupied by #{@renters.count} residents"
 	end
-
-
 end
 
 

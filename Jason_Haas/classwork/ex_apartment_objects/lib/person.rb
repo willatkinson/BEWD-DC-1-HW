@@ -7,4 +7,8 @@ class Person
 		@credit_score = credit_score
 		@gender = gender
 	end
+
+	def to_s
+		"Tenant: #{name} \t Credit Score: #{credit_score}"
+	end
 end

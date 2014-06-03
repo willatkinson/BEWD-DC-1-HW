@@ -10,4 +10,12 @@ class Apartment
 		@renter = nil
 		@rent = nil
 	end
+
+	def is_rented?
+		@renter != nil
+	end
+
+	def to_s
+		"Apartment: #{@name} \n sqft: #{@apt_sqft} \t Bedrooms: #{@apt_bedrooms} \t Bathrooms: #{@apt_bathrooms}"
+	end
 end
