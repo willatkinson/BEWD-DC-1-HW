@@ -43,8 +43,12 @@
 $:.unshift (File.dirname(__FILE__))
 require 'lib/game'
 
-# put code here print a welcome message for your user
-
-# put code here ask the user for their name, and save it
+# introduction
+puts "Welcome to the Secret Number game!!  Created by Jason Haas."
+puts "What is your name?"
+player_name = gets.chomp
+puts "Hi #{player_name}!!"
 
 # put code here to create a new game, and start it
+game = Game.new(player_name)
+game.start
