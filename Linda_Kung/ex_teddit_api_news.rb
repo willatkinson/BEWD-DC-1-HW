@@ -67,5 +67,6 @@ reddit_story.each do |story|
 
 end
 
-
-
+# This code looks good and works well! However, there is a bit of repeated code, especially
+# between lines 42 and 68. Can you think of a way to create a single function and call it
+# three separate times so you don't have to repeat yourself?
