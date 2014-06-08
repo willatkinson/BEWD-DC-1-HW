@@ -14,11 +14,13 @@ class Metro
   def get_metro_incidents
     if !@metro_incidents['Incidents'].empty?
       puts
-      puts "*** Alert! Alert! ***"
+      puts "\033[0;31m*** Alert! Alert! ***\033[0m"
       @metro_incidents['Incidents'].each do |incident|
         puts
         puts "#{incident['Description']}"
       end
+      puts
+      puts "\033[0;31m*** End Alerts ***\033[0m"
     else
       puts "No incidents to report."
       puts
@@ -30,15 +32,26 @@ class Metro
     x = 0
     puts
     puts "Here are the train lines:"
+    puts
     @response_metro_lines['Lines'].each do |metro_line|
       x += 1
       @check << x
-      puts "#{x} : #{metro_line['DisplayName']}"
+      print "#{x} : "
+      colorize_lines(metro_line['DisplayName'])
+      #puts "#{x} : #{metro_line['DisplayName']}"
     end
     puts
     puts "Please enter the number of the line you need."
     @line_color = gets.chomp.to_i
     check(@line_color)
+  end
+  
+  def colorize_lines(lines_color)
+    puts "\033[0;31m#{lines_color}\033[0m" if lines_color.include? "Red"
+    puts "\033[38;5;208m#{lines_color}\033[0m" if lines_color.include? "Orange"
+    puts "\033[0;32m#{lines_color}\033[0m" if lines_color.include? "Green"
+    puts "\033[0;93m#{lines_color}\033[0m" if lines_color.include? "Yellow"
+    puts "\033[0;94m#{lines_color}\033[0m" if lines_color.include? "Blue"
   end
 
   def check(line_color)
@@ -51,21 +64,22 @@ class Metro
   end
 
   def get_metro_line(line_color)
+    puts `clear`
     if line_color == 1
       line = "RD"
-      puts "Red Line Stations:"
+      puts "\033[0;31mRed Line Stations:\033[0m"
     elsif line_color == 2
       line = "OR"
-      puts "Orange Line Stations:"
+      puts "\033[38;5;208mOrange Line Stations:\033[0m"
     elsif line_color == 3
       line = "GR"
-      puts "Green Line Stations:"
+      puts "\033[0;32mGreen Line Stations:\033[0m"
     elsif line_color == 4
       line = "YL"
-      puts "Yellow Line Stations:"
+      puts "\033[0;93mYellow Line Stations:\033[0m"
     else
       line = "BL"
-      puts "Blue Line Stations:"
+      puts "\033[0;94mBlue Line Stations:\033[0m"
     end
     color = MetroLine.new(line)
 

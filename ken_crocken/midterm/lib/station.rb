@@ -12,9 +12,17 @@ class Station
     url = "http://api.wmata.com/Rail.svc/json/jStationInfo?StationCode=#{@station_code}&api_key=kfgpmgvfgacx98de9q3xazww"
     @response_station_info = JSON.parse(RestClient.get "#{url}")
     puts `clear`
-    puts "=== #{@response_station_info['Name']} ==="
-
+    #puts "=== #{@response_station_info['Name']} ==="
+    colorize_station(@response_station_info['LineCode1'])
     get_elevators
+  end
+
+  def colorize_station(lines_color)
+    puts "\033[0;31m===\033[0m #{@response_station_info['Name']} \033[0;31m===\033[0m" if lines_color.include? "RD"
+    puts "\033[38;5;208m===\033[0m #{@response_station_info['Name']} \033[38;5;208m===\033[0m" if lines_color.include? "OR"
+    puts "\033[0;32m===\033[0m #{@response_station_info['Name']} \033[0;32m===\033[0m" if lines_color.include? "GR"
+    puts "\033[0;93m===\033[0m #{@response_station_info['Name']} \033[0;93m===\033[0m" if lines_color.include? "YL"
+    puts "\033[0;94m===\033[0m #{@response_station_info['Name']} \033[0;94m===\033[0m" if lines_color.include? "BL"
   end
 
   def get_elevators
@@ -23,7 +31,7 @@ class Station
     @station_elevators = JSON.parse(RestClient.get "#{url}")
     if !@station_elevators['ElevatorIncidents'].empty?
       puts
-      puts "*** Warning!  Escalator and Elevator Incidents Reported! ***"
+      puts "\033[0;31m*** Warning!  Escalator and Elevator Incidents Reported! ***\033[0m"
       @station_elevators['ElevatorIncidents'].each do |incidents|
         puts "#{incidents['LocationDescription']}, issue: #{incidents['SymptomDescription']}" 
       end
