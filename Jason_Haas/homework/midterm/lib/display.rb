@@ -1,7 +1,6 @@
 class Display
 
 	def initialize
-		@selection
 	end
 
 	def start
