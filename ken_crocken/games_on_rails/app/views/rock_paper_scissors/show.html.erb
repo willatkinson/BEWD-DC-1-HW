@@ -1,0 +1,22 @@
+<% if @guess == @other_player %>
+  <h3>It's a tie!</h3>
+  <%= image_tag "games/tie.jpg" %>
+<% elsif @guess == 1 && @other_player == 2 %>
+  <h3>Loser</h3>
+  <%= image_tag "games/loser.gif" %>
+<% elsif @guess == 1 && @other_player == 3 %>
+  <h3>Winner! Winner!</h3>
+  <%= image_tag "games/winner.gif" %>
+<% elsif @guess == 2 && @other_player == 1 %>
+  <h3>Loser</h3>
+  <%= image_tag "games/loser.gif" %>
+<% elsif @guess == 2 && @other_player == 3 %>
+  <h3>Winner! Winner!</h3>
+  <%= image_tag "games/winner.gif" %>
+<% elsif @guess == 3 && @other_player == 1 %>
+  <h3>Loser</h3>
+  <%= image_tag "games/loser.gif" %>
+<% elsif @guess == 3 && @other_player == 2 %>
+  <h3>Winner! Winner!</h3>
+  <%= image_tag "games/winner.gif" %>
+<% end %>
