@@ -54,6 +54,10 @@ class Game
   end
 
   def check_number(guess)
+    
+    # --- Move the msgs hash from the initialization method so @secret.number gets reset.
+    # --- When starting the game again in the play_again method, a whole new game is not initialized,
+    # --- so the @messages hash does not get reset.  
 
     @messages = {
       win:    "Winner! Winner! The Secret Number was #{@secret.number}. Well done!",
@@ -61,7 +65,7 @@ class Game
       lower:  "Sorry, you guessed wrong.  Guess lower!",
       lose:   "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}."
     }
-    
+
     if guess == secret.number  
         puts @messages[:win] 
         # puts "Winner! Winner! The Secret Number was #{@secret.number}. Well done!\n\n"
