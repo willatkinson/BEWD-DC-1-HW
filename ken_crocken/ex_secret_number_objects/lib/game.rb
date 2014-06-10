@@ -8,7 +8,7 @@ class Game
 # we'll want to write a few separate methods for unique tasks so that our
 # code is structured properly
 
-  attr_accessor :secret, :guesses, :guess, :player, :messages
+  attr_accessor :secret, :guesses, :guess, :player
 
   def initialize (name)
 
@@ -16,12 +16,6 @@ class Game
     @guesses =  3
     @guess = guess
     @player = Person.new(name)
-    @messages = {
-      win:    "Winner! Winner! The Secret Number was #{@secret.number}. Well done!",
-      higher: "Nope, that's not the Secret Number.  Guess higher!",
-      lower:  "Sorry, you guessed wrong.  Guess lower!",
-      lose:   "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}."
-    }
     @wins = 0
     @losses = 0
 
@@ -61,6 +55,13 @@ class Game
 
   def check_number(guess)
 
+    @messages = {
+      win:    "Winner! Winner! The Secret Number was #{@secret.number}. Well done!",
+      higher: "Nope, that's not the Secret Number.  Guess higher!",
+      lower:  "Sorry, you guessed wrong.  Guess lower!",
+      lose:   "You are out of guesses.  You lose.  The Secret Number was #{@secret.number}."
+    }
+    
     if guess == secret.number  
         puts @messages[:win] 
         # puts "Winner! Winner! The Secret Number was #{@secret.number}. Well done!\n\n"
