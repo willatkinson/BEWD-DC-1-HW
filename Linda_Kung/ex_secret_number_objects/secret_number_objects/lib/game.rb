@@ -20,6 +20,8 @@ class Game
 	def secret_number_game
 
 		3.downto(1) do |guesses|
+		# this is really good. If you wanted to give the player the option to
+		# play again after their three guesses, do you know how you could do that?
 
 		guess = gets.chomp.to_i
 

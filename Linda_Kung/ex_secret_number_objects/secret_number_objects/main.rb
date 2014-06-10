@@ -55,5 +55,6 @@ puts "Hey #{player_name}!"
 
 
 # put code here to create a new game, and start it
-game = Game.new(player_name)
+game = Game.new(player_name) # good!
 game.startgame
+
