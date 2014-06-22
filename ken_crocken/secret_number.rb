@@ -93,3 +93,12 @@ assert(sec_number(1,2) == 'Guess higher!')
 # puts sec_number(5) == player_guess == secret_number
 # puts sec_number(6) == player_guess > secret_number
 
+# Hey Ken, great job on this.  Your method, conditions, and loops are great.
+# One thing that wasn't accounted for is if the user gets the correct guess on the
+# first try.  The downto loops keeps counting down. 
+
+# One way to account for this is to get rid of your puts methods in sec_number and just return the string.
+# That way in your loop your could either puts sec_number(player_guess,guesses) or check for a return value
+# to break out of the loop. 
+
+# Keep up the great work!

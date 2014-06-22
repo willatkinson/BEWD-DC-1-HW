@@ -1,0 +1,10 @@
+<% if @guess > @secret_num %>
+<p>You're too high</p>
+<%= image_tag "games/loser.gif" %>
+<% elsif @guess < @secret_num %>
+<p> You're too low</p>
+<%= image_tag "games/loser.gif" %>
+<% else %>
+<h1>Winner!!</h1>
+<%= image_tag "games/winner.gif" %>
+<% end %>
