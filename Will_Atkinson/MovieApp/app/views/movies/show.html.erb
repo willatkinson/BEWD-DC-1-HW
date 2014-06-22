@@ -1,0 +1,7 @@
+<h1><%= @movie.title %> - <%= @movie.year_released %></h1>
+<p><% @movie.rating.times do %>*<% end %></p>
+<p><%= @movie.description %></p>
+
+<p><%= link_to "Edit", edit_movie_path(@movie) %></p>
+
+<p><%= link_to "Home", root_path %></p>

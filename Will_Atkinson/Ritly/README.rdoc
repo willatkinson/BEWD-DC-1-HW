@@ -1,0 +1,3 @@
+== README
+
+Ritly - the app completely UNLIKE bitly.

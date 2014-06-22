@@ -1,0 +1,5 @@
+<h1>Your url information</h1>
+
+<h2><%= link_to "Code link", request.env["HTTP_HOST"] + '/' + @url.hash_code %></h2>
+<h2>Code: <strong><%= @url.hash_code %></strong></h2>
+<h2>Link: <strong><%= link_to @url.link, @url.link %></strong></h2>

@@ -1,0 +1,4 @@
+== README
+
+Will Atkinson's Movie App for General Assembly's Back-End Web Development class
+in Washington, D.C.

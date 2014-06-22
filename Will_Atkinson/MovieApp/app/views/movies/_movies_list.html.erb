@@ -1,0 +1,16 @@
+<table>                         
+  <tr>                          
+    <th>Title</th>
+    <th>Year</th>
+    <th>Rating</th>
+    <th>Description</th>
+  </tr>
+<% @movies.each do |movie| %>
+  <tr>
+    <td><%= link_to "#{movie.title}", movie_path(movie.id) %></td>
+    <td><%= movie.year_released %></td>
+    <td><% movie.rating.times do %>*<% end %></td>
+    <td><%= movie.description %></td>
+  </tr>
+<% end %>                        
+</table>

@@ -1,0 +1,20 @@
+<%= form_for @movie do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description %><br>
+  <%= f.label :year_released %>
+  <%= f.text_field :year_released %><br>
+  <%= f.label :rating %>
+  <%= f.radio_button(:rating, 1) %>
+  <%= f.label(:star_one, "1") %>
+  <%= f.radio_button(:rating, 2) %>
+  <%= f.label(:star_one, "2") %>
+  <%= f.radio_button(:rating, 3) %>
+  <%= f.label(:star_one, "3") %>
+  <%= f.radio_button(:rating, 4) %>
+  <%= f.label(:star_one, "4") %>
+  <%= f.radio_button(:rating, 5) %>
+  <%= f.label(:star_one, "5") %><br>
+  <%= f.submit %>
+<% end %>

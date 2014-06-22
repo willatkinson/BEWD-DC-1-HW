@@ -1,0 +1,7 @@
+<h1>Create new url code</h1>
+
+<%= form_for @url do |f| %>
+	<%= f.label :link, "URL to shorten" %>
+	<%= f.url_field :link %>
+	<%= f.submit "Create URL" %>
+<% end %>

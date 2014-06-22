@@ -1,0 +1,13 @@
+<h1>Welcome to RetFlix!</h1>
+<h2>See our matching search results below</h2>
+
+<%= render "movies/search_form" %>
+
+<% if @movies.empty? %>
+  <p>There are no matches to your search.</p>
+<% else %>
+  <%= render "movies/movies_list" %>
+<% end %>
+
+<p><%= link_to "Home", root_path %></p>
+
