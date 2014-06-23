@@ -6,6 +6,7 @@ puts '   / ____/ / / / | / / ____/  |/  / __ \/ /   / __ \ \/ /  |/  / ____/ | /
  / __/ / /_/ / /|  / /___/ /  / / ____/ /___/ /_/ / / / /  / / /___/ /|  / / /    
 /_/    \____/_/ |_/_____/_/  /_/_/   /_____/\____/ /_/_/  /_/_____/_/ |_/ /_/     
                                                                                   '
+# THIS IS SO FREAKING COOL!!!
  
 puts 'Funemployment will tell you the unemployment rate for any month starting in 1948.'
 parser = Parser.new

@@ -58,3 +58,7 @@ class Parser
       end
    end
 end
+
+# Your command line app is really cool! You should make it a gem so other people
+# could use it - http://guides.rubygems.org/make-your-own-gem/
+# Nice work on this assignment!
