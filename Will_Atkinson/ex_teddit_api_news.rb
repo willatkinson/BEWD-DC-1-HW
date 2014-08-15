@@ -13,11 +13,12 @@ require 'json'
 def display_message(message)
   puts message
 end
+# This totally works! but why create a new function instead of just using `puts`?
 
 def calculate_upvotes(story, category)
   upvotes = 1
  
-    upvotes *= 5 if story.downcase.include?('cat')
+    upvotes *= 5 if story.downcase.include?('cat') # good!
     upvotes *= 8 if story.downcase.include?('bacon')
     upvotes *= 3 if category.downcase.include?('food')
     
@@ -25,7 +26,7 @@ def calculate_upvotes(story, category)
 end
  
 def print_story(story, category, upvotes)
-  if upvotes > 1 
+  if upvotes > 1 # This condition is preventing lots of stories from showing. Is that the intended behavior?
     display_message("\n#{story}, \nCATEGORY: #{category.capitalize}, UPVOTES: #{upvotes}")
   end
 end
@@ -47,6 +48,7 @@ def get_mashable_stories
     mashable_stories << story
   end
   mashable_stories
+  
 end
  
 def get_reddit_stories 
@@ -90,3 +92,6 @@ print_stories(get_digg_stories)
 puts ''
 puts '***** MASHABLE STORIES *****'
 print_stories(get_mashable_stories)
+
+# You've done a good job on this assignment! If you'd like to improve it, try reducing the amount of
+# functions and combining similar code into one function, i.e. the print_stories and display_message functions
