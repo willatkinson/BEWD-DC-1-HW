@@ -33,3 +33,14 @@ puts "Please give it a category:"
 category = get_input
 upvotes = calculate_upvotes(story, category)
 puts "New story added! #{story}, Category: #{category.capitalize}, Current Upvotes: #{upvotes}"
+
+# Hey Will, great job on the conditionals.  Something to keep in mind is the casing.
+# If I enter the category Cat with an uppercase 'C' the program doesn't work.
+# a good way around this would be something liek category.downcase.include? 'cat'
+# Other than that - great work.
+
+p calculate_upvotes('test story', 'cats') == 5
+p calculate_upvotes('test story', 'bacon') == 8
+p calculate_upvotes('test story', 'Food') == 3
+p calculate_upvotes('test story', 'food') == 3
+p calculate_upvotes('test story', 'foo') == 1
